@@ -1,0 +1,37 @@
+﻿{
+    "userName": "앙재비",
+    "energy": 560,
+    "ePc": 1,
+    "soldierList": [
+        {
+            "soldierNumber": 0,
+            "soldierName": "지건 0",
+            "amount": 0,
+            "ePs": 1,
+            "price": 160
+        },
+        {
+            "soldierNumber": 1,
+            "soldierName": "아기 지건1",
+            "amount": 0,
+            "ePs": 10,
+            "price": 2500
+        },
+        {
+            "soldierNumber": 2,
+            "soldierName": "아기 지건2",
+            "amount": 0,
+            "ePs": 10,
+            "price": 2500
+        },
+        {
+            "soldierNumber": 3,
+            "soldierName": "아기 지건3",
+            "amount": 0,
+            "ePs": 10,
+            "price": 2500
+        }
+    ],
+    "bossNum": 2,
+    "enemyNum": 2
+}
