@@ -20,6 +20,11 @@ public class EnemyManager : MonoBehaviour
     private Text bossNameText = null;
     [SerializeField]
     private Text smallEnemyNameText = null;
+
+    [SerializeField]
+    private Image silhouetteImage = null;
+    [SerializeField]
+    private Sprite[] silhouetteSprite = null;
     public bool bossing { get; private set; }
     private int enemyNum = 0;
     private int bossNum = 0;
@@ -27,6 +32,14 @@ public class EnemyManager : MonoBehaviour
     {
         EnemysNumberSet();
         EnemySpawn();
+        Debug.Log(enemyMoves.Count);
+    }
+    private void Update()
+    {
+        if (enemyNum < enemyMoves.Count-1 && Input.GetKeyDown(KeyCode.W))
+        {
+            silhouetteImage.sprite = silhouetteSprite[enemyNum+1];
+        }
     }
     private void EnemysNumberSet()
     {

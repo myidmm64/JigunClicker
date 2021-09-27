@@ -34,6 +34,7 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private RectTransform downRectTransform = null;
 
+
     private List<UpgradePanel> upgradePanels = new List<UpgradePanel>();
 
     private void Start()

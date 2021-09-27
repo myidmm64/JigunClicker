@@ -1760,7 +1760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9811321, g: 0.5220363, b: 0.5220363, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3151,6 +3151,11 @@ MonoBehaviour:
   - "3\u3148"
   bossNameText: {fileID: 112942426}
   smallEnemyNameText: {fileID: 1807792186}
+  silhouetteImage: {fileID: 649597986}
+  silhouetteSprite:
+  - {fileID: 21300000, guid: e13080abdf4719c43b26b727e61270b5, type: 3}
+  - {fileID: 21300000, guid: 9c0df734f0ebbc14f9bee7ff8b25efb5, type: 3}
+  - {fileID: 21300000, guid: e11fa4f63795a4c4c958441758cd9c35, type: 3}
 --- !u!4 &1163483892
 Transform:
   m_ObjectHideFlags: 0
