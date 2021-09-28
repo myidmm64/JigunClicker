@@ -34,8 +34,14 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private RectTransform downRectTransform = null;
 
-
+    [SerializeField]
+    private GameObject optionPanel = null;
+    private bool optioning = false;
+    [SerializeField]
+    private GameObject AchievementsPanel = null;
+    private bool aching = false;
     private List<UpgradePanel> upgradePanels = new List<UpgradePanel>();
+
 
     private void Start()
     {
@@ -100,4 +106,28 @@ public class UIManager : MonoBehaviour
         returnBossButton.rectTransform.DOAnchorPosY
             (upRectTransform.anchoredPosition.y, 0.5f);
     } 
+    public void OnOption()
+    {
+        if(!optioning)
+        optionPanel.SetActive(true);
+        optioning = true;
+    }
+    public void OffOption()
+    {
+        optionPanel.SetActive(false);
+        optioning = false;
+    }
+    public void OnAchi()
+    {
+        if (!aching)
+        {
+            AchievementsPanel.SetActive(true);
+            aching = true;
+        }
+    }
+    public void OffAchi()
+    {
+        AchievementsPanel.SetActive(false);
+        aching = false;
+    }
 }

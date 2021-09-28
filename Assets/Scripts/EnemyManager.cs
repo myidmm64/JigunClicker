@@ -28,18 +28,24 @@ public class EnemyManager : MonoBehaviour
     public bool bossing { get; private set; }
     private int enemyNum = 0;
     private int bossNum = 0;
+    [SerializeField]
+    private int[] nextEnemyPrice = null;
+    [SerializeField]
+    private Text priceText = null;
     private void Start()
     {
         EnemysNumberSet();
         EnemySpawn();
+        SilhouetteSet();
         Debug.Log(enemyMoves.Count);
+        PriceTextUISet();
     }
-    private void Update()
+    private void SilhouetteSet()
     {
-        if (enemyNum < enemyMoves.Count-1 && Input.GetKeyDown(KeyCode.W))
-        {
+        if (enemyNum < enemyMoves.Count-1)
             silhouetteImage.sprite = silhouetteSprite[enemyNum+1];
-        }
+        else
+            silhouetteImage.sprite = silhouetteSprite[enemyNum];
     }
     private void EnemysNumberSet()
     {
@@ -98,14 +104,21 @@ public class EnemyManager : MonoBehaviour
     }
     public void NextEnemy()
     {
-        if (enemyNum < enemyMoves.Count - 1)
+        if (enemyNum < enemyMoves.Count - 1 && nextEnemyPrice[enemyNum] < GameManager.Instance.CurrentUser.energy)
         {
+            GameManager.Instance.CurrentUser.energy -= nextEnemyPrice[enemyNum];
             GameManager.Instance.CurrentUser.enemyNum++;
             EnemysNumberSet();
             SmallEnemyOnOff();
+            NameSet();
+            SilhouetteSet();
+            PriceTextUISet();
+            Debug.Log(enemyNum);
         }
-        NameSet();
-        Debug.Log(enemyNum);
+    }
+    private void PriceTextUISet()
+    {
+        priceText.text = string.Format("적 업그레이드\n{0}원", nextEnemyPrice[enemyNum]);
     }
     private void SmallEnemyOnOff()
     {
