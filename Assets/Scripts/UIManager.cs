@@ -13,6 +13,8 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject upgradePanelTemplate = null;
     [SerializeField]
+    private GameObject StatUpgradePanelTemplate = null;
+    [SerializeField]
     private EnergyText energyTextTemplate = null;
     [SerializeField]
     private Transform pool = null;
@@ -41,13 +43,20 @@ public class UIManager : MonoBehaviour
     private GameObject AchievementsPanel = null;
     private bool aching = false;
     private List<UpgradePanel> upgradePanels = new List<UpgradePanel>();
+    private List<StatUpUpgradePanel> statupgradePanels = new List<StatUpUpgradePanel>();
+    private List<GameObject> upgradeOb = new List<GameObject>();
+    private List<GameObject> statupOb = new List<GameObject>();
 
-
+    [SerializeField]
+    private GameObject GoStatUpPanelButton = null;
+    [SerializeField]
+    private GameObject GoFactoryPanelButton = null;
     private void Start()
     {
 
         UpdateEnergyPanel();
         CreatePanels();
+        StatCreatePanels();
         upAnchoredPositionY = upgradeBackGround.rectTransform.anchoredPosition.y;
         downAnchoredPositionY = upgradeBackGround.rectTransform.anchoredPosition.y - 300f;
     }
@@ -58,10 +67,25 @@ public class UIManager : MonoBehaviour
         foreach (Soldier soldier in GameManager.Instance.CurrentUser.soldierList)
         {
             newPanel = Instantiate(upgradePanelTemplate, upgradePanelTemplate.transform.parent);
+            upgradeOb.Add(newPanel);
             newPanelComponenet = newPanel.GetComponent<UpgradePanel>();
             newPanelComponenet.SetValue(soldier);
             newPanel.SetActive(true);
             upgradePanels.Add(newPanelComponenet);
+        }
+    }
+    private void StatCreatePanels()
+    {
+        GameObject newPanel = null;
+        StatUpUpgradePanel newPanelComponenet = null;
+        foreach (StatUp statUp in GameManager.Instance.CurrentUser.statUpList)
+        {
+            newPanel = Instantiate(StatUpgradePanelTemplate, StatUpgradePanelTemplate.transform.parent);
+            statupOb.Add(newPanel);
+            newPanelComponenet = newPanel.GetComponent<StatUpUpgradePanel>();
+            newPanelComponenet.StatSetValue(statUp);
+            newPanel.SetActive(true);
+            statupgradePanels.Add(newPanelComponenet);
         }
     }
     public void OnClickBeaker()
@@ -129,5 +153,31 @@ public class UIManager : MonoBehaviour
     {
         AchievementsPanel.SetActive(false);
         aching = false;
+    }
+    public void GoFactoryPanel()
+    {
+        GoFactoryPanelButton.SetActive(false);
+        GoStatUpPanelButton.SetActive(true);
+        for (int i = 0; i < GameManager.Instance.CurrentUser.statUpList.Count; i++)
+        {
+            statupOb[i].SetActive(false);
+        }
+        for (int i =0; i< GameManager.Instance.CurrentUser.soldierList.Count; i++)
+        {
+            upgradeOb[i].SetActive(true);
+        }
+    }
+    public void GoStatUpPanel()
+    {
+        GoStatUpPanelButton.SetActive(false);
+        GoFactoryPanelButton.SetActive(true);
+        for (int i = 0; i < GameManager.Instance.CurrentUser.soldierList.Count; i++)
+        {
+            upgradeOb[i].SetActive(false);
+        }
+        for (int i = 0; i < GameManager.Instance.CurrentUser.statUpList.Count; i++)
+        {
+            statupOb[i].SetActive(true);
+        }
     }
 }

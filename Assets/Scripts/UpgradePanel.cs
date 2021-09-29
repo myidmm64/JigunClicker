@@ -28,7 +28,6 @@ public class UpgradePanel : MonoBehaviour
         this.soldier = soldier;
         UpdateUI();
     }
-    
     public void UpdateUI()
     {
         soldierNameText.text = soldier.soldierName;

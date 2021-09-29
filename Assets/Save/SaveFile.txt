@@ -1,14 +1,14 @@
 ﻿{
     "userName": "앙재비",
-    "energy": 9900,
+    "energy": 87,
     "ePc": 1,
     "soldierList": [
         {
             "soldierNumber": 0,
             "soldierName": "지건 0",
-            "amount": 0,
+            "amount": 1,
             "ePs": 1,
-            "price": 160
+            "price": 200
         },
         {
             "soldierNumber": 1,
@@ -32,6 +32,44 @@
             "price": 2500
         }
     ],
-    "bossNum": 2,
-    "enemyNum": 2
+    "statUpList": [
+        {
+            "statUpNumber": 0,
+            "statUpName": "재비",
+            "amount": 0,
+            "upAtk": 0,
+            "upHP": 0,
+            "upCri": 0,
+            "upCriDamage": 0,
+            "upFever": 0,
+            "upHit": 0,
+            "price": 0
+        },
+        {
+            "statUpNumber": 1,
+            "statUpName": "재비2",
+            "amount": 0,
+            "upAtk": 0,
+            "upHP": 0,
+            "upCri": 0,
+            "upCriDamage": 0,
+            "upFever": 0,
+            "upHit": 0,
+            "price": 0
+        },
+        {
+            "statUpNumber": 2,
+            "statUpName": "재비3",
+            "amount": 0,
+            "upAtk": 0,
+            "upHP": 0,
+            "upCri": 0,
+            "upCriDamage": 0,
+            "upFever": 0,
+            "upHit": 0,
+            "price": 0
+        }
+    ],
+    "bossNum": 0,
+    "enemyNum": 0
 }

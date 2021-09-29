@@ -32,14 +32,6 @@ public class GameManager : MonoSingleton<GameManager>
         LoadFromJson();
         uiManager = GetComponent<UIManager>();
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            user.energy += 10000;
-            UI.UpdateEnergyPanel();
-        }
-    }
     private void EarnEnergyPerSecond()
     {
         foreach (Soldier soldier in user.soldierList)
