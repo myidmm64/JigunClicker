@@ -1,14 +1,15 @@
 ﻿{
     "userName": "앙재비",
-    "energy": 87,
+    "energy": 1410,
     "ePc": 1,
+    "dia": 0,
     "soldierList": [
         {
             "soldierNumber": 0,
             "soldierName": "지건 0",
-            "amount": 1,
+            "amount": 0,
             "ePs": 1,
-            "price": 200
+            "price": 160
         },
         {
             "soldierNumber": 1,
@@ -70,6 +71,6 @@
             "price": 0
         }
     ],
-    "bossNum": 0,
-    "enemyNum": 0
+    "bossNum": 2,
+    "enemyNum": 1
 }

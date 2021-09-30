@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
@@ -59,6 +58,7 @@ public class UIManager : MonoBehaviour
         StatCreatePanels();
         upAnchoredPositionY = upgradeBackGround.rectTransform.anchoredPosition.y;
         downAnchoredPositionY = upgradeBackGround.rectTransform.anchoredPosition.y - 300f;
+        GoFactoryPanel();
     }
     private void CreatePanels()
     {
@@ -90,7 +90,6 @@ public class UIManager : MonoBehaviour
     }
     public void OnClickBeaker()
     {
-        //GameManager.Instance.CurrentUser.energy += GameManager.Instance.CurrentUser.ePc;
         UpdateEnergyPanel();
         beakerAnimator.Play("Click");
         EnergyText newText = null;

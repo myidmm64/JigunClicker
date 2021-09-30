@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
@@ -9,6 +8,10 @@ public class EnemyMove : MonoBehaviour
     private long maxHP = 0;
     [SerializeField]
     private long energyGive = 0;
+    [SerializeField]
+    private int diaGive = 0;
+    [SerializeField]
+    private bool isBoss = false;
     private SpriteRenderer spriteRenderer = null;
     void Start()
     {
@@ -20,9 +23,10 @@ public class EnemyMove : MonoBehaviour
         hP = maxHP;
         GameManager.Instance.barUI.HandleHP(hP, maxHP);
     }
-    private void GiveEnergy()
+    private void GiveRewards()
     {
         GameManager.Instance.CurrentUser.energy += energyGive;
+        GameManager.Instance.CurrentUser.dia += diaGive;
         GameManager.Instance.UI.UpdateEnergyPanel();
 
     }
@@ -33,13 +37,9 @@ public class EnemyMove : MonoBehaviour
     }
     private IEnumerator Damaged()
     {
-        for(int i =0; i<3; i++)
-        {
             spriteRenderer.color = Color.red;
             yield return new WaitForSeconds(0.1f);
             spriteRenderer.color = Color.white;
-            yield return new WaitForSeconds(0.1f);
-        }
     }
     public void ClickAndDamaged()
     {
@@ -51,11 +51,17 @@ public class EnemyMove : MonoBehaviour
             }
             else
             {
-
+            if (isBoss)
+            {
+                spriteRenderer.color = Color.white;
+                GiveRewards();
+                GameManager.Instance.CurrentEnemyManager.NextBoss();
+                return;
+            }
             spriteRenderer.color = Color.white;
             HPSet();
             GameManager.Instance.barUI.ResetHPSlider();
-            GiveEnergy();
+            GiveRewards();
 
         }
     }

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,6 +27,7 @@ public class EnemyManager : MonoBehaviour
     public bool bossing { get; private set; }
     private int enemyNum = 0;
     private int bossNum = 0;
+    private int lastBossCheckNum = 0;
     [SerializeField]
     private int[] nextEnemyPrice = null;
     [SerializeField]
@@ -72,12 +72,17 @@ public class EnemyManager : MonoBehaviour
     }
     public void BossComing()
     {
+        if (lastBossCheckNum > bossMoves.Count - 1)
+        {
+            GameManager.Instance.barUI.IsLastBoss();
+            return;
+        }
         bossing = true;
         enemyMoves[enemyNum].gameObject.SetActive(false);
         returnButton.gameObject.SetActive(true);
         bossMoves[bossNum].gameObject.SetActive(true);
         bossMoves[bossNum].ColorWhite();
-        bossMoves[bossNum].transform.DOScale(new Vector3(2f, 2f, 1f), 3f);
+        bossMoves[bossNum].transform.DOScale(new Vector3(2f, 2f, 1f), 1.5f);
         bossMoves[bossNum].HPSet();
         NameSet();
     }
@@ -87,10 +92,18 @@ public class EnemyManager : MonoBehaviour
         enemyMoves[enemyNum].gameObject.SetActive(true);
         enemyMoves[enemyNum].ColorWhite();
         returnButton.gameObject.SetActive(false);
-        bossMoves[bossNum].gameObject.SetActive(false);
-        bossMoves[bossNum].transform.DOScale(new Vector3(1f, 1f, 1f), 3f);
+        IsBossDown();
+        bossMoves[bossNum].transform.DOScale(new Vector3(1f, 1f, 1f), 1.5f);
         enemyMoves[enemyNum].HPSet();
         NameSet();
+    }
+    private void IsBossDown()
+    {
+        bossMoves[bossNum].gameObject.SetActive(false);
+    }
+    private void IsPastBossDown()
+    {
+        bossMoves[bossNum-1].gameObject.SetActive(false);
     }
     public void NextBoss()
     {
@@ -98,13 +111,18 @@ public class EnemyManager : MonoBehaviour
         {
             GameManager.Instance.CurrentUser.bossNum++;
             EnemysNumberSet();
+            IsBossDown();
         }
+        lastBossCheckNum++;
         NameSet();
+        BossDown();
+        IsPastBossDown();
+        GameManager.Instance.barUI.OffBossUISet();
         Debug.Log(bossNum);
     }
     public void NextEnemy()
     {
-        if (enemyNum < enemyMoves.Count - 1 && nextEnemyPrice[enemyNum] < GameManager.Instance.CurrentUser.energy)
+        if (enemyNum < enemyMoves.Count - 1 && nextEnemyPrice[enemyNum] <= GameManager.Instance.CurrentUser.energy)
         {
             GameManager.Instance.CurrentUser.energy -= nextEnemyPrice[enemyNum];
             GameManager.Instance.CurrentUser.enemyNum++;

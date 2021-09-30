@@ -15,6 +15,7 @@ public class HPBarUI : MonoBehaviour
     private Transform smallEnemyPosition = null;
     [SerializeField]
     private Transform bossEnemyPosition = null;
+    private bool isLastBoss = false;
     private void Start()
     {
         ResetHPSlider();
@@ -24,9 +25,14 @@ public class HPBarUI : MonoBehaviour
             OffBossUISet();
         
     }
-
+    public void IsLastBoss()
+    {
+        isLastBoss = true;
+    }
     public void ONBossUISet()
     {
+        if (isLastBoss)
+            return;
         timerSlider.gameObject.SetActive(true);
         for(int i =0; i< smallEnemyUI.Length; i++)
         {
