@@ -4,6 +4,7 @@ public class StatUp
 {
     public int statUpNumber;
     public string statUpName;
+    public string statUpString;
     public int amount;
     public long upAtk;
     public long upHP;

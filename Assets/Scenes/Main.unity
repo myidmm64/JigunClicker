@@ -396,8 +396,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aecd3f728a59a34fa55f2185a2ff073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 2
-  energyGive: 20
+  maxHP: 10
+  energyGive: 100
   diaGive: 0
   isBoss: 0
 --- !u!1 &52331746
@@ -474,6 +474,85 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52331746}
+  m_CullTransparentMesh: 1
+--- !u!1 &83952816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 83952817}
+  - component: {fileID: 83952819}
+  - component: {fileID: 83952818}
+  m_Layer: 5
+  m_Name: EpcText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &83952817
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83952816}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 564831224}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 6, y: -24.1}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &83952818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83952816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 4e503efb08090144f9ed8a0bf526e01d, type: 3}
+    m_FontSize: 12
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\uC2A4\uD0EF 0 \uC529 \uC99D\uAC00"
+--- !u!222 &83952819
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83952816}
   m_CullTransparentMesh: 1
 --- !u!1 &93380247
 GameObject:
@@ -588,7 +667,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -10, y: 10}
-  m_SizeDelta: {x: 50, y: 30}
+  m_SizeDelta: {x: 75, y: 30}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &109047650
 MonoBehaviour:
@@ -634,8 +713,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UpgradePanel, Assembly-CSharp
+      - m_Target: {fileID: 564831225}
+        m_TargetAssemblyTypeName: StatUpUpgradePanel, Assembly-CSharp
         m_MethodName: OnClickPurchase
         m_Mode: 1
         m_Arguments:
@@ -1096,9 +1175,9 @@ RectTransform:
   m_Father: {fileID: 959488686}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -125, y: 135}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 35, y: 245}
   m_SizeDelta: {x: 60, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &217306000
@@ -1657,7 +1736,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD569\uC131"
+  m_Text: "\uC5C5\uADF8\uB808\uC774\uB4DC"
 --- !u!222 &500848193
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2035,6 +2114,7 @@ RectTransform:
   - {fileID: 616317148}
   - {fileID: 2099170795}
   - {fileID: 1242429361}
+  - {fileID: 83952817}
   m_Father: {fileID: 116739520}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2064,6 +2144,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 48250943bed28d64fa6b3fd463754bbc, type: 3}
   - {fileID: 21300000, guid: ca4bfdaf975c98f418c1c8ec24c9340b, type: 3}
   - {fileID: 21300000, guid: 801162d83630bde41ad563edf372fbe8, type: 3}
+  upStatText: {fileID: 83952818}
 --- !u!114 &564831226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2283,7 +2364,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 75, y: -10}
-  m_SizeDelta: {x: 150, y: 30}
+  m_SizeDelta: {x: 170, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &616317149
 MonoBehaviour:
@@ -2307,7 +2388,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 4e503efb08090144f9ed8a0bf526e01d, type: 3}
-    m_FontSize: 18
+    m_FontSize: 17
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -2657,10 +2738,10 @@ RectTransform:
   m_Father: {fileID: 868462165}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -25, y: 25}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &765837494
 MonoBehaviour:
@@ -3069,58 +3150,66 @@ MonoBehaviour:
     energy: 0
     ePc: 1
     dia: 0
+    lastBossCheck: 0
     soldierList:
     - soldierNumber: 0
       soldierName: "\uC9C0\uAC74 0"
       amount: 0
-      ePs: 1
-      price: 160
+      ePs: 5
+      price: 75
+      purePrice: 75
     - soldierNumber: 1
       soldierName: "\uC544\uAE30 \uC9C0\uAC741"
       amount: 0
-      ePs: 10
-      price: 2500
+      ePs: 20
+      price: 500
+      purePrice: 500
     - soldierNumber: 2
       soldierName: "\uC544\uAE30 \uC9C0\uAC742"
       amount: 0
-      ePs: 10
+      ePs: 120
       price: 2500
+      purePrice: 2500
     - soldierNumber: 3
       soldierName: "\uC544\uAE30 \uC9C0\uAC743"
       amount: 0
-      ePs: 10
-      price: 2500
+      ePs: 300
+      price: 12500
+      purePrice: 12500
     statUpList:
     - statUpNumber: 0
-      statUpName: "\uC7AC\uBE44"
+      statUpName: "\uD30C\uAD34\uB825 \uC5C5\uADF8\uB808\uC774\uB4DC"
+      statUpString: "\uACF5\uACA9\uB825 1 \uC0C1\uC2B9"
       amount: 0
-      upAtk: 0
+      upAtk: 1
       upHP: 0
       upCri: 0
       upCriDamage: 0
       upFever: 0
       upHit: 0
-      price: 0
+      price: 10
     - statUpNumber: 1
-      statUpName: "\uC7AC\uBE442"
+      statUpName: "\uCCB4\uB825 \uC5C5\uADF8\uB808\uC774\uB4DC"
+      statUpString: "\uCCB4\uB825 10 \uC0C1\uC2B9"
       amount: 0
       upAtk: 0
-      upHP: 0
+      upHP: 10
       upCri: 0
       upCriDamage: 0
       upFever: 0
       upHit: 0
-      price: 0
+      price: 20
     - statUpNumber: 2
-      statUpName: "\uC7AC\uBE443"
+      statUpName: "\uD06C\uB9AC\uD2F0\uCEEC \uD655\uB960"
+      statUpString: "\uD06C\uB9AC\uD2F0\uCEEC \uD655\uB960 0.1% \uC0C1\uC2B9"
       amount: 0
       upAtk: 0
       upHP: 0
-      upCri: 0
+      upCri: 1
       upCriDamage: 0
       upFever: 0
       upHit: 0
-      price: 0
+      price: 30
     bossNum: 0
     enemyNum: 0
   hpBarUI: {fileID: 1443656773}
@@ -3424,10 +3513,10 @@ RectTransform:
   m_Father: {fileID: 165270393}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 71.9}
-  m_SizeDelta: {x: 0, y: 220}
+  m_SizeDelta: {x: 320, y: 220}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &959488687
 MonoBehaviour:
@@ -3531,7 +3620,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 75, y: 10}
+  m_AnchoredPosition: {x: 75, y: 25}
   m_SizeDelta: {x: 150, y: 20}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &971936660
@@ -3671,8 +3760,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aecd3f728a59a34fa55f2185a2ff073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 7
-  energyGive: 40
+  maxHP: 45
+  energyGive: 382
   diaGive: 0
   isBoss: 0
 --- !u!1 &994344765
@@ -3749,6 +3838,85 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994344765}
+  m_CullTransparentMesh: 1
+--- !u!1 &1005286906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1005286907}
+  - component: {fileID: 1005286909}
+  - component: {fileID: 1005286908}
+  m_Layer: 5
+  m_Name: EpcText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1005286907
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005286906}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1758408957}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 6, y: -24.1}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1005286908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005286906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 4e503efb08090144f9ed8a0bf526e01d, type: 3}
+    m_FontSize: 15
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "0 / \uCD08"
+--- !u!222 &1005286909
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005286906}
   m_CullTransparentMesh: 1
 --- !u!1 &1140691509
 GameObject:
@@ -4419,9 +4587,9 @@ RectTransform:
   m_Father: {fileID: 165270393}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 240}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -89}
   m_SizeDelta: {x: -20, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1443656773
@@ -5149,7 +5317,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -10, y: 10}
-  m_SizeDelta: {x: 50, y: 30}
+  m_SizeDelta: {x: 75, y: 30}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1584778787
 MonoBehaviour:
@@ -5315,7 +5483,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC758\uB8B0"
+  m_Text: "\uC2A4\uD0EF"
 --- !u!222 &1616657608
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5594,6 +5762,7 @@ RectTransform:
   - {fileID: 2145584467}
   - {fileID: 971936659}
   - {fileID: 1526627991}
+  - {fileID: 1005286907}
   m_Father: {fileID: 116739520}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5655,6 +5824,7 @@ MonoBehaviour:
   soldierNameText: {fileID: 2145584468}
   priceText: {fileID: 971936660}
   amountText: {fileID: 1526627992}
+  epcText: {fileID: 1005286908}
   purchaseButton: {fileID: 1584778787}
   soldierImage: {fileID: 994344767}
   soldierSprite:
@@ -5733,7 +5903,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC2A4\uD0EF"
+  m_Text: "\uC758\uB8B0"
 --- !u!222 &1758917025
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6053,10 +6223,10 @@ RectTransform:
   m_Father: {fileID: 165270393}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -34, y: -293}
-  m_SizeDelta: {x: 1600, y: 423}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -34, y: 36}
+  m_SizeDelta: {x: 1920, y: 423}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1846376973
 MonoBehaviour:
@@ -6427,9 +6597,9 @@ RectTransform:
   m_Father: {fileID: 959488686}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -65, y: 135}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 95, y: 245}
   m_SizeDelta: {x: 60, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1958108635
@@ -6655,7 +6825,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 75, y: 10}
+  m_AnchoredPosition: {x: 75, y: 25}
   m_SizeDelta: {x: 150, y: 20}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &2099170796
@@ -6795,8 +6965,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aecd3f728a59a34fa55f2185a2ff073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 6
-  energyGive: 30
+  maxHP: 20
+  energyGive: 225
   diaGive: 0
   isBoss: 0
 --- !u!1 &2107843399

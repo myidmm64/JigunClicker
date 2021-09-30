@@ -1,76 +1,84 @@
 ﻿{
     "userName": "앙재비",
-    "energy": 1410,
+    "energy": 1403,
     "ePc": 1,
     "dia": 0,
+    "lastBossCheck": 0,
     "soldierList": [
         {
             "soldierNumber": 0,
             "soldierName": "지건 0",
-            "amount": 0,
-            "ePs": 1,
-            "price": 160
+            "amount": 7,
+            "ePs": 5,
+            "price": 120,
+            "purePrice": 75
         },
         {
             "soldierNumber": 1,
             "soldierName": "아기 지건1",
             "amount": 0,
-            "ePs": 10,
-            "price": 2500
+            "ePs": 20,
+            "price": 500,
+            "purePrice": 500
         },
         {
             "soldierNumber": 2,
             "soldierName": "아기 지건2",
             "amount": 0,
-            "ePs": 10,
-            "price": 2500
+            "ePs": 120,
+            "price": 2500,
+            "purePrice": 2500
         },
         {
             "soldierNumber": 3,
             "soldierName": "아기 지건3",
             "amount": 0,
-            "ePs": 10,
-            "price": 2500
+            "ePs": 300,
+            "price": 12500,
+            "purePrice": 12500
         }
     ],
     "statUpList": [
         {
             "statUpNumber": 0,
-            "statUpName": "재비",
+            "statUpName": "파괴력 업그레이드",
+            "statUpString": "공격력 1 상승",
             "amount": 0,
-            "upAtk": 0,
+            "upAtk": 1,
             "upHP": 0,
             "upCri": 0,
             "upCriDamage": 0,
             "upFever": 0,
             "upHit": 0,
-            "price": 0
+            "price": 10
         },
         {
             "statUpNumber": 1,
-            "statUpName": "재비2",
+            "statUpName": "체력 업그레이드",
+            "statUpString": "체력 10 상승",
             "amount": 0,
             "upAtk": 0,
-            "upHP": 0,
+            "upHP": 10,
             "upCri": 0,
             "upCriDamage": 0,
             "upFever": 0,
             "upHit": 0,
-            "price": 0
+            "price": 20
         },
         {
             "statUpNumber": 2,
-            "statUpName": "재비3",
+            "statUpName": "크리티컬 확률",
+            "statUpString": "크리티컬 확률 0.1% 상승",
             "amount": 0,
             "upAtk": 0,
             "upHP": 0,
-            "upCri": 0,
+            "upCri": 1,
             "upCriDamage": 0,
             "upFever": 0,
             "upHit": 0,
-            "price": 0
+            "price": 30
         }
     ],
-    "bossNum": 2,
-    "enemyNum": 1
+    "bossNum": 0,
+    "enemyNum": 0
 }

@@ -21,7 +21,9 @@ public class GameManager : MonoSingleton<GameManager>
     private void Awake()
     {
         SAVE_PATH = Application.dataPath + "/Save";
-        if(Directory.Exists(SAVE_PATH) == false)
+       // SAVE_PATH = Application.persistentDataPath + "/Save";
+       //세이브 속도 조절
+        if (Directory.Exists(SAVE_PATH) == false)
         {
             Directory.CreateDirectory(SAVE_PATH);
         }
@@ -34,8 +36,9 @@ public class GameManager : MonoSingleton<GameManager>
     {
         foreach (Soldier soldier in user.soldierList)
         {
-            user.energy += soldier.ePs * soldier.amount;
-        }
+            if(soldier.amount>0)
+                user.energy += (long)(soldier.ePs + ((soldier.ePs * 0.7f) * (soldier.amount - 1)));
+        }   
         UI.UpdateEnergyPanel();
     }
 

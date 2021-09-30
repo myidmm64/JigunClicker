@@ -7,4 +7,5 @@ public class Soldier
     public int amount;
     public long ePs;
     public long price;
+    public long purePrice;
 }

@@ -72,7 +72,7 @@ public class EnemyManager : MonoBehaviour
     }
     public void BossComing()
     {
-        if (lastBossCheckNum > bossMoves.Count - 1)
+        if (GameManager.Instance.CurrentUser.lastBossCheck > bossMoves.Count - 1)
         {
             GameManager.Instance.barUI.IsLastBoss();
             return;
@@ -113,7 +113,7 @@ public class EnemyManager : MonoBehaviour
             EnemysNumberSet();
             IsBossDown();
         }
-        lastBossCheckNum++;
+        GameManager.Instance.CurrentUser.lastBossCheck++;
         NameSet();
         BossDown();
         IsPastBossDown();
