@@ -27,7 +27,7 @@ public class GameManager : MonoSingleton<GameManager>
         {
             Directory.CreateDirectory(SAVE_PATH);
         }
-        InvokeRepeating("SaveToJson", 1f , 30f);
+        InvokeRepeating("SaveToJson", 1f , 60f);
         InvokeRepeating("EarnEnergyPerSecond", 0f, 1f);
         LoadFromJson();
         uiManager = GetComponent<UIManager>();
@@ -51,7 +51,7 @@ public class GameManager : MonoSingleton<GameManager>
             user = JsonUtility.FromJson<User>(json);
         }
     }
-    private void SaveToJson()
+    public void SaveToJson()
     {
         Debug.Log("저장됩니다.");
         string json = JsonUtility.ToJson(user, true);
@@ -60,5 +60,9 @@ public class GameManager : MonoSingleton<GameManager>
     private void OnApplicationQuit()
     {
         SaveToJson();
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

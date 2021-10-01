@@ -41,7 +41,8 @@ public class StatUpUpgradePanel : MonoBehaviour
         }
 
         GameManager.Instance.CurrentUser.energy -= statUp.price;
-        statUp.price = (long)(statUp.price * 1.25f);
+        statUp.price = (long)(statUp.purePrice * Mathf.Pow(1.07f, statUp.amount + 1));
+        GameManager.Instance.CurrentUser.ePc += statUp.upAtk;
         statUp.amount++;
         StatUpUpdateUI();
         GameManager.Instance.UI.UpdateEnergyPanel();

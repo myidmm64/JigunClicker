@@ -13,4 +13,5 @@ public class StatUp
     public long upFever;
     public long upHit;
     public long price;
+    public long purePrice;
 }

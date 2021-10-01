@@ -1,16 +1,16 @@
 ﻿{
     "userName": "앙재비",
-    "energy": 1403,
+    "energy": 300,
     "ePc": 1,
     "dia": 0,
-    "lastBossCheck": 0,
+    "lastBossCheck": 3,
     "soldierList": [
         {
             "soldierNumber": 0,
             "soldierName": "지건 0",
-            "amount": 7,
+            "amount": 0,
             "ePs": 5,
-            "price": 120,
+            "price": 75,
             "purePrice": 75
         },
         {
@@ -41,7 +41,7 @@
     "statUpList": [
         {
             "statUpNumber": 0,
-            "statUpName": "파괴력 업그레이드",
+            "statUpName": "하급 힘 강화",
             "statUpString": "공격력 1 상승",
             "amount": 0,
             "upAtk": 1,
@@ -50,35 +50,38 @@
             "upCriDamage": 0,
             "upFever": 0,
             "upHit": 0,
-            "price": 10
+            "price": 2000,
+            "purePrice": 2000
         },
         {
             "statUpNumber": 1,
-            "statUpName": "체력 업그레이드",
-            "statUpString": "체력 10 상승",
+            "statUpName": "중급 힘 강화",
+            "statUpString": "공격력 10 상승",
             "amount": 0,
-            "upAtk": 0,
-            "upHP": 10,
+            "upAtk": 10,
+            "upHP": 0,
             "upCri": 0,
             "upCriDamage": 0,
             "upFever": 0,
             "upHit": 0,
-            "price": 20
+            "price": 28000,
+            "purePrice": 28000
         },
         {
             "statUpNumber": 2,
-            "statUpName": "크리티컬 확률",
-            "statUpString": "크리티컬 확률 0.1% 상승",
+            "statUpName": "상급 힘 강화",
+            "statUpString": "공격력 100 상승",
             "amount": 0,
-            "upAtk": 0,
+            "upAtk": 100,
             "upHP": 0,
-            "upCri": 1,
+            "upCri": 0,
             "upCriDamage": 0,
             "upFever": 0,
             "upHit": 0,
-            "price": 30
+            "price": 600000,
+            "purePrice": 600000
         }
     ],
-    "bossNum": 0,
-    "enemyNum": 0
+    "bossNum": 2,
+    "enemyNum": 1
 }

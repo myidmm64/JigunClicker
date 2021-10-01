@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +15,8 @@ public class HPBarUI : MonoBehaviour
     [SerializeField]
     private Transform bossEnemyPosition = null;
     private bool isLastBoss = false;
+    private bool isTimer = false;
+    private float isTime = 0f;
     private void Start()
     {
         ResetHPSlider();
@@ -23,7 +24,26 @@ public class HPBarUI : MonoBehaviour
             ONBossUISet();
         else
             OffBossUISet();
-        
+
+        timerSlider.value = 1f;
+        isTime = 10f;
+    }
+    private void Update()
+    {
+        if (isTimer)
+        {
+            isTime -= Time.deltaTime;
+            TimerValueSet();
+            if (isTime <= 0f) 
+            {
+                GameManager.Instance.CurrentEnemyManager.BossDown();
+                OffBossUISet();
+            }
+        }
+    }
+    private void TimerValueSet()
+    {
+        timerSlider.value = isTime / 10f; // 수정좀여
     }
     public void IsLastBoss()
     {
@@ -34,6 +54,8 @@ public class HPBarUI : MonoBehaviour
         if (isLastBoss)
             return;
         timerSlider.gameObject.SetActive(true);
+        isTimer = true;
+        isTime = 10f;
         for(int i =0; i< smallEnemyUI.Length; i++)
         {
             smallEnemyUI[i].SetActive(false);
@@ -43,6 +65,8 @@ public class HPBarUI : MonoBehaviour
     }
     public void OffBossUISet()
     {
+        isTimer = false;
+        timerSlider.value = 1f;
         timerSlider.gameObject.SetActive(false);
         for (int i = 0; i < smallEnemyUI.Length; i++)
         {
