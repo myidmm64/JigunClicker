@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: 7161969f7de491f41a67d2cde9f4b5c1
+guid: c98ffc925ed837c4eb42e2ec5b47d944
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2337961310298916287
-    second: Soldiers_0
+      213: 5514096971536325190
+    second: JigunPP_0
   - first:
-      213: -3637557228772214577
-    second: Soldiers_1
+      213: 8358271663041021935
+    second: JigunPP_1
   - first:
-      213: -8819204307325172043
-    second: Soldiers_2
-  - first:
-      213: -723415951869367042
-    second: Soldiers_3
+      213: -4535512534514025705
+    second: JigunPP_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -100,6 +97,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -115,85 +124,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Soldiers_0
+      name: JigunPP_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
+        y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14ab6094394ed8fd0800000000000000
-      internalID: -2337961310298916287
+      spriteID: 64ada7d0bf1068c40800000000000000
+      internalID: 5514096971536325190
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soldiers_1
+      name: JigunPP_1
       rect:
         serializedVersion: 2
         x: 32
-        y: 96
+        y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc8b0e819fcc48dc0800000000000000
-      internalID: -3637557228772214577
+      spriteID: fe706c32bcb8ef370800000000000000
+      internalID: 8358271663041021935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soldiers_2
+      name: JigunPP_2
       rect:
         serializedVersion: 2
         x: 64
-        y: 96
+        y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b6c94c9864eb9580800000000000000
-      internalID: -8819204307325172043
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Soldiers_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 96
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: efca9fb4609e5f5f0800000000000000
-      internalID: -723415951869367042
+      spriteID: 71bb5f9416f9e01c0800000000000000
+      internalID: -4535512534514025705
       vertices: []
       indices: 
       edges: []

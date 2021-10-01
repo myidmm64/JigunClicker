@@ -1,6 +1,6 @@
 using System.IO;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class GameManager : MonoSingleton<GameManager>
 {
     private string SAVE_PATH = "";
@@ -17,10 +17,11 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField]
     private EnemyManager enemyManager = null;
     public EnemyManager CurrentEnemyManager { get { return enemyManager; } }
-
+    [SerializeField]
+    private Text MpsText = null;
     private void Awake()
     {
-        SAVE_PATH = Application.dataPath + "/Save";
+        SAVE_PATH = Application.persistentDataPath + "/Save";
        // SAVE_PATH = Application.persistentDataPath + "/Save";
        //세이브 속도 조절
         if (Directory.Exists(SAVE_PATH) == false)
@@ -36,8 +37,11 @@ public class GameManager : MonoSingleton<GameManager>
     {
         foreach (Soldier soldier in user.soldierList)
         {
-            if(soldier.amount>0)
+            if (soldier.amount > 0) 
+            {
                 user.energy += (long)(soldier.ePs + ((soldier.ePs * 0.7f) * (soldier.amount - 1)));
+                MpsText.text = string.Format("초 당 골드 : {0}", (long)(soldier.ePs + ((soldier.ePs * 0.7f) * (soldier.amount - 1))));
+            }
         }   
         UI.UpdateEnergyPanel();
     }
